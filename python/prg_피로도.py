@@ -22,13 +22,28 @@ def DFS(k,d,dungeons):
             answer = max(answer,d)
             #print('answer=',answer)
 
-        
-    
-
 def solution(k, dungeons):
     DFS(k,0,dungeons)
-    global answer
-    
-    
+    global answer   
     return answer
 
+
+
+#밑에는 두번째 풀이시 더 효율적인 코드로 작성
+"""from collections import defaultdict
+maxL=0
+def DFS(k, dungeons, L):
+    global maxL
+    maxL=max(maxL,L)
+    for i, val in enumerate(dungeons):
+        if val[0]<=k: #입구컷여부
+            dungeons.remove(val)
+            DFS(k-val[1],dungeons,L+1)
+            dungeons.insert(i,val)
+            
+
+def solution(k, dungeons):
+    
+    DFS(k, dungeons,0)
+    answer = maxL
+    return answer"""
