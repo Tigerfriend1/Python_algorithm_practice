@@ -13,12 +13,7 @@ def solution(menu, order, k):
             dq.append(order[idx])
             idx+=1
         if comple==-1 and len(dq)>0: #작업할 여유가 있는지 확인.
-            a=dq.popleft()
-            comple=i+menu[a]
-            dq.appendleft(a)
-            #print(comple)
-        #print(dq)
-        
+            comple=i+menu[dq[0]] #완료시간은 현재시간부터 커피제작시간 더해줘야함.
         answer=max(answer,len(dq))    
     return answer
 
