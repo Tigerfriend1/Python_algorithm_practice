@@ -8,11 +8,7 @@ def solution(numbers, target):
         nonlocal answer
         if len(numbers)==0 and mynum==target:
             answer+=1
-            #print(nowlist)
-            
             return
-        #print(numbers)
-        #for num in numbers:
         print('a')
         for i in case:
             if len(numbers)!=0:
@@ -20,6 +16,7 @@ def solution(numbers, target):
                 nowlist.append(a*i)
                 DFS(nowlist,mynum+a*i,numbers[1:])
                 nowlist.pop()
+                
     DFS(nowlist,mynum,numbers)
     
     return answer
