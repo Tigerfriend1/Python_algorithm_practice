@@ -25,3 +25,14 @@ def solution(arr):
         pre=now
     
     return answer"""
+
+#훨씬 간편한 stack으로 풀기
+
+"""def solution(arr):
+    stack=[arr[0]]
+
+    for i in range(1,len(arr)):
+        if stack[-1]!=arr[i]:
+            stack.append(arr[i])
+        
+    return stack"""
