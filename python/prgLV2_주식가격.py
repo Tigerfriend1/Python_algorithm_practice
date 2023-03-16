@@ -21,21 +21,22 @@ def solution(prices):
                     
     return answer
 
-
+#다시 풀기. 직관적으로 표현.
 """from collections import deque
 def solution(prices):
-    answer = [0]*len(prices)
-    stack=deque()
-    stack.append(0)
-    for i in range(1,len(prices)):
-        if prices[i]<prices[stack[-1]]:
-            for j in stack.reverse():
-                if prices[i]<prices[j]:
-                    answer[j]=i-j
-                    stack.remove(j)
-                else:
-                    break
-        stack.append(i)
-        
+    answer = []
+    dq=deque(prices)
+    
+    while dq:
+        cnt=0
+        now=dq.popleft()
+        for i in dq:
+            if now>i:
+                cnt+=1
+                break
+            else:
+                cnt+=1
+        answer.append(cnt)
+    
     
     return answer"""
