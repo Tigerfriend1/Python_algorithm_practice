@@ -47,3 +47,29 @@ def solution(progresses, speeds):
             answer.append(relese)
     
     return answer"""
+
+
+#queue를 이용하되, 보다 직관적인 풀이
+"""from collections import deque
+import math
+def solution(progresses, speeds):
+    answer = [0]
+    pro=deque(progresses)
+    sp=deque(speeds)
+    
+    while pro:
+        now=pro.popleft()
+        nowsp=sp.popleft()
+        nowdays=math.ceil((100-now)/nowsp)
+        if len(answer)==1 and answer[0]==0:
+            predays=nowdays
+            answer[0]+=1
+            continue
+        if predays>=nowdays:
+            answer[-1]+=1
+        else:
+            predays=nowdays
+            answer.append(1)
+            
+        #print(answer,predays,nowdays)
+    return answer"""
