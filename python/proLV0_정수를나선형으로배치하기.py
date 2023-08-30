@@ -12,7 +12,7 @@ def solution(n):
         num+=1
         ny=y+dy[direction]
         nx=x+dx[direction]
-        if nx>n-1 or ny>n-1 or nx<0 or ny<0 or answer[ny][nx]!=0:
+        if nx>n-1 or ny>n-1 or nx<0 or ny<0 or answer[ny][nx]!=0: #범위를 초과하거나 이미 값을 작성한경우는 방향전환
             direction=(direction+1)%4
             ny=y+dy[direction]
             nx=x+dx[direction]
